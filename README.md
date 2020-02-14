@@ -40,13 +40,26 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    - Express is a framework for node.js that allows us to easily use Node.js to write server side code. It is a lightweight an unopinionated framework. It is packaged with some built in middleware (such as express.json() and express.Router()) which we have always used).
+
 - [ ] Describe Middleware?
+
+    - Middleware is code that runs between two process (hence MIDDLEware). Middleware can do a large variety of things, from changing how certain things work (such as thunk with redux) to filtering/checking/validating/manipulating data such the middleware used in this project, or sending logger information to a database to find out information on HOW users are using the app and what endpoints are being hit the most. There are three unofficial kinds of middleware.
+    - 1.) Built in middleware (express.json())
+    - 2.) Third party middleware (cors())
+    - 3.) Custom middleware (validateProjectId() that I made for this project)
 
 - [ ] Describe a Resource?
 
+    -In a RESTful Api, everything is a resource that is accessible through a unique URI, they can have multiple representations. Communication and resource management happen through HTTP methods
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    - Status codes and error/messages and the data that is returned is how the backend communicates if the HTTP request was successful or not, and most importantly WHY.
+
 - [ ] How can we partition our application into sub-applications?
+
+    - through the express middleware express.Router().
 
 ## Minimum Viable Product
 
