@@ -1,10 +1,11 @@
 const express = require('express');
 const server = express();
+const cors = require('cors')
 const projectRouter = require('./routers/projectRouter.js');
 const actionRouter = require('./routers/actionsRouter.js');
 
 server.use(express.json());
-
+server.use(cors())
 
 server.get('/', (req, res) => {
     res.send(`<h2>hello world!</h2>`);
