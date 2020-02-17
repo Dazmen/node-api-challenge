@@ -40,13 +40,26 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    - Express is a framework for node.js that allows us to easily use Node.js to write server side code. It is a lightweight an unopinionated framework. It is packaged with some built in middleware (such as express.json() and express.Router()) which we have always used).
+
 - [ ] Describe Middleware?
+
+    - Middleware is code that runs between two process (hence MIDDLEware). Middleware can do a large variety of things, from changing how certain things work (such as thunk with redux) to filtering/checking/validating/manipulating data such the middleware used in this project, or sending logger information to a database to find out information on HOW users are using the app and what endpoints are being hit the most. There are three unofficial kinds of middleware.
+    - 1.) Built in middleware (express.json())
+    - 2.) Third party middleware (cors())
+    - 3.) Custom middleware (validateProjectId() that I made for this project)
 
 - [ ] Describe a Resource?
 
+    -In a RESTful Api, everything is a resource that is accessible through a unique URI, they can have multiple representations. Communication and resource management happen through HTTP methods
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    - Status codes and error/messages and the data that is returned is how the backend communicates if the HTTP request was successful or not, and most importantly WHY.
+
 - [ ] How can we partition our application into sub-applications?
+
+    - through the express middleware express.Router().
 
 ## Minimum Viable Product
 
@@ -89,7 +102,7 @@ The `/data/helpers` folder includes files you can use to manage the persistence 
 
 **All these helper methods return a promise. Remember to use .then().catch() or async/await.**
 
-- `get()`: resolves to an array of all the resources contained in the database. If you pass an `id` to this method it will return the resource with that id if one is found.
+- PP/ `get()`: resolves to an array of all the resources contained in the database. If you pass an `id` to this method it will return the resource with that id if one is found.
 - `insert()`: calling insert passing it a resource object will add it to the database and return the newly created resource.
 - `update()`: accepts two arguments, the first is the `id` of the resource to update, and the second is an object with the `changes` to apply. It returns the updated resource. If a resource with the provided `id` is not found, the method returns `null`.
 - `remove()`: the remove method accepts an `id` as it's first parameter and, upon successfully deleting the resource from the database, returns the number of records deleted.

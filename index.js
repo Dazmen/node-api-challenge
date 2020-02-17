@@ -1,3 +1,25 @@
+const express = require('express');
+const server = express();
+const cors = require('cors')
+const projectRouter = require('./routers/projectRouter.js');
+const actionRouter = require('./routers/actionsRouter.js');
+
+server.use(express.json());
+server.use(cors())
+
+server.get('/', (req, res) => {
+    res.send(`<h2>hello world!</h2>`);
+  });
+server.use('/api/projects', projectRouter);
+server.use('/api/actions', actionRouter);
+
+const port = process.env.PORT || 5000;
+server.listen(port, () => {
+    console.log(`running on port: ${port}`)
+})
+
+
+
 /*
 play this: https://www.youtube.com/watch?v=d-diB65scQU
 
